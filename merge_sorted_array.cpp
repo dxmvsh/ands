@@ -3,55 +3,17 @@
 using namespace std;
 
 void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-    vector<int> result;
-    int i = 0, j = 0;
-    while(i < m || j < n) {
-        if(i == m) {
-            result.push_back(nums2[j]);
-            j++;
-            continue;
-        }
-        if(j == n) {
-            result.push_back(nums1[i]);
-            i++;
-            continue;
-        }
-        int x = nums1[i];
-        int y = nums2[j];
-        if(i == m) {
-            result.push_back(y);
-            j++;
-            continue;
-        }
-        if(j == n) {
-            result.push_back(x);
-            i++;
-            continue;
-        }
-        if (x < y && i != m) {
-            result.push_back(x);
-            i++;
-            continue;
-        } 
-        if (x > y && j != n) {
-            result.push_back(y);
-            j++;
-            continue;
-        } 
-        if (x == y) {
-            if (i != m) {
-                result.push_back(x);
-                i++;
-                continue;
-            }
-            if (j != n) {
-                result.push_back(j);
-                j++;
-                continue;
-            }
+    int i = m-1, j = n-1, k = m+n-1;
+    while(j>=0 && i>=0) {
+        if(nums2[j] > nums1[i]) {
+            nums1[k--] = nums2[j--];
+        } else {
+            nums1[k--] = nums1[i--];
         }
     }
-    nums1 = result;
+    while(j>=0) {
+        nums1[k--] = nums2[j--];
+    }
 }
 
 int main() {
