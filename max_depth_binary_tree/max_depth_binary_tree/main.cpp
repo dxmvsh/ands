@@ -17,28 +17,19 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-int maxDepthCount = -1;
-
-void depth(TreeNode* root, int currentCount) {
-    if(currentCount > maxDepthCount) {
-        maxDepthCount = currentCount;
-    }
-    if(!root) {
-        return;
-    }
-    depth(root->left, currentCount + 1);
-    depth(root->right, currentCount + 1);
-}
 
 int maxDepth(TreeNode* root) {
-    depth(root, 0);
-    return maxDepthCount;
+    if(!root)
+        return 0;
+    int left = maxDepth(root->left);
+    int right = maxDepth(root->right);
+    return max(left, right) + 1;
 }
 
 int main(int argc, const char * argv[]) {
     TreeNode left2 = TreeNode(15);
-    TreeNode right2 = TreeNode(7);
-    TreeNode left1 = TreeNode(1, &left2, &right2);
+    TreeNode right2 = TreeNode(7, &left2, NULL);
+    TreeNode left1 = TreeNode(1, NULL, &right2);
     TreeNode right1 = TreeNode(1);
     TreeNode root = TreeNode(3, &left1, &right1);
     cout<<maxDepth(&root)<<endl;
