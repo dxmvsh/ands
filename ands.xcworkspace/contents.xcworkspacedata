@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:sorted_array_to_bst/sorted_array_to_bst.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:symmetric_tree/symmetric_tree.xcodeproj">
    </FileRef>
 </Workspace>
