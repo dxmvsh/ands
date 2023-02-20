@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:pascals_triangle_ii/pascals_triangle_ii.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:pascals_triange/pascals_triange.xcodeproj">
    </FileRef>
    <FileRef
