@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:path_sum/path_sum.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:min_depth_of_binary_tree/min_depth_of_binary_tree.xcodeproj">
    </FileRef>
    <FileRef
