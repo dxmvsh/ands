@@ -10,17 +10,21 @@
 using namespace std;
 
 int maxProfit(vector<int>& prices) {
-    int minPriceIndex = 0;
-    for(int i=0; i<prices.size(); i++)
-        minPriceIndex = min(prices[i], prices[minPriceIndex]) < prices[minPriceIndex] ? i : minPriceIndex;
-    int maxPriceIndex = minPriceIndex;
-    for(int i=minPriceIndex; i<prices.size(); i++)
-        maxPriceIndex = max(prices[i], prices[maxPriceIndex]) > prices[maxPriceIndex] ? i : maxPriceIndex;
-    return prices[maxPriceIndex] - prices[minPriceIndex];
+    int minimumValue = prices[0];
+    int profit = 0;
+    int currentDaySellProfit = 0;
+    
+    for(int i=0; i<prices.size(); i++) {
+        minimumValue = min(minimumValue, prices[i]);
+        currentDaySellProfit = prices[i] - minimumValue;
+        profit = max(profit, currentDaySellProfit);
+    }
+    
+    return profit;
 }
 
 int main(int argc, const char * argv[]) {
-    vector<int> v {7,6,4,3,1};
+    vector<int> v {7,2,4,1};
     cout<<maxProfit(v)<<endl;
     return 0;
 }
