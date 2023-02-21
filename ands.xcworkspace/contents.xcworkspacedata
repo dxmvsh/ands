@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:valid_palindrome/valid_palindrome.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:best_time_buy_sell/best_time_buy_sell.xcodeproj">
    </FileRef>
    <FileRef
