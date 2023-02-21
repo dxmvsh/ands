@@ -10,24 +10,22 @@
 using namespace std;
 
 bool isPalindrome(string s) {
-    vector<char> characters;
-    for(int i=0; i<s.size(); i++) {
-        if(s[i] - 'a' >= 0 && s[i] - 'a' <= 25)
-            characters.push_back(s[i]);
-        else if(s[i] - 'A' >= 0 && s[i] -'A' <= 25)
-            characters.push_back(s[i] - 'A' + 'a');
-        else if(s[i] - '0' >= 0 && s[i] - '0' <=9)
-            characters.push_back(s[i]);
-    }
-    for(int i=0; i<characters.size(); i++) {
-        if(characters[characters.size() - 1 - i] != characters[i])
+    int l = 0, r = (int) s.size() - 1;
+    while (l < r) {
+        while (l<r && !isalnum(s[l])) {
+            l++;
+        }
+        while (l<r && !isalnum(s[r])) {
+            r--;
+        }
+        if(tolower(s[l++]) != tolower(s[r--]))
             return false;
     }
     return true;
 }
 
 int main(int argc, const char * argv[]) {
-    string s = "0P0";
+    string s = "race a ecar";
     cout<<isPalindrome(s)<<endl;
     return 0;
 }
