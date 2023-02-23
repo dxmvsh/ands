@@ -23,23 +23,13 @@ ListNode* getNodeAfterStride(int stride, ListNode* root) {
 }
 
 ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-    int aListSize = 0, bListSize = 0;
-    for(auto a = headA; a != nullptr; a = a->next)
-        aListSize++;
-    for(auto b = headB; b != nullptr; b = b->next)
-        bListSize++;
-    cout<<aListSize<<" "<<bListSize<<endl;
-    if(bListSize > aListSize) {
-        headA = getNodeAfterStride(bListSize - aListSize, headA);
-        headB = getNodeAfterStride(aListSize, headB);
-    } else {
-        headB = getNodeAfterStride(bListSize, headB);
-        headA = getNodeAfterStride(aListSize - bListSize, headA);
+    for(auto a = headA; a != nullptr; a = a -> next) {
+        for(auto b = headB; b != nullptr; b = b -> next) {
+            if (a == b)
+                return a;
+        }
     }
-    if(headA == headB)
-        return headA;
-    else
-        return nullptr;
+    return nullptr;
 }
 
 int main(int argc, const char * argv[]) {
