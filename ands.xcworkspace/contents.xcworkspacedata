@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:majority_element/majority_element.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:intersection_of_two_linked_lists/intersection_of_two_linked_lists.xcodeproj">
    </FileRef>
    <FileRef
