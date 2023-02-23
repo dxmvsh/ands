@@ -23,11 +23,21 @@ ListNode* getNodeAfterStride(int stride, ListNode* root) {
 }
 
 ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-    for(auto a = headA; a != nullptr; a = a -> next) {
-        for(auto b = headB; b != nullptr; b = b -> next) {
-            if (a == b)
-                return a;
-        }
+    int aListSize = 0, bListSize = 0;
+    for(auto a = headA; a != nullptr; a = a->next)
+        aListSize++;
+    for(auto b = headB; b != nullptr; b = b->next)
+        bListSize++;
+    int difference = abs(aListSize - bListSize);
+    if(bListSize > aListSize)
+        headB = getNodeAfterStride(difference, headB);
+    else
+        headA = getNodeAfterStride(difference, headA);
+    while (headA != nullptr and headB != nullptr) {
+        if(headA == headB)
+            return headA;
+        headA = headA -> next;
+        headB = headB -> next;
     }
     return nullptr;
 }
