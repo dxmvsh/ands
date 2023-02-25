@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:is_happy/is_happy.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:excel_sheet_number/excel_sheet_number.xcodeproj">
    </FileRef>
    <FileRef
