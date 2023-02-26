@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:contains_duplicate/contains_duplicate.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:reverse_linked_list/reverse_linked_list.xcodeproj">
    </FileRef>
    <FileRef
