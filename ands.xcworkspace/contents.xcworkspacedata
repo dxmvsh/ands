@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:missing_number/missing_number.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:valid_anagram/valid_anagram.xcodeproj">
    </FileRef>
    <FileRef
