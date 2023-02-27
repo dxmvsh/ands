@@ -9,20 +9,34 @@
 #include "vector"
 using namespace std;
 
+//int missingNumber(vector<int>& nums) {
+//    int n = (int) nums.size();
+//    int count[n+1];
+//    for(int i=0; i<n+1; i++) {
+//        count[i] = 0;
+//    }
+//    for(int i=0; i<nums.size(); i++) {
+//        count[nums[i]]++;
+//    }
+//    for(int i=0; i<n+1; i++) {
+//        if(!count[i])
+//            return i;
+//    }
+//    return -1;
+//}
+
 int missingNumber(vector<int>& nums) {
     int n = (int) nums.size();
-    int count[n+1];
-    for(int i=0; i<n+1; i++) {
-        count[i] = 0;
+    int sum;
+    if(n % 2) {
+        sum = n * ((n + 1) / 2);
+    } else {
+        sum = (n / 2) * (n + 1);
     }
-    for(int i=0; i<nums.size(); i++) {
-        count[nums[i]]++;
-    }
-    for(int i=0; i<n+1; i++) {
-        if(!count[i])
-            return i;
-    }
-    return -1;
+    int sumOfElements = 0;
+    for(int i=0; i<nums.size(); i++)
+        sumOfElements += nums[i];
+    return sum - sumOfElements;
 }
 
 int main(int argc, const char * argv[]) {
