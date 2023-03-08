@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:fizz_buzz/fizz_buzz.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:first_unique_char/first_unique_char.xcodeproj">
    </FileRef>
    <FileRef
