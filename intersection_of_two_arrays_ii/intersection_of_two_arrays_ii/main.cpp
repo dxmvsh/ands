@@ -11,11 +11,20 @@ using namespace std;
 
 vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
     vector<int> result;
+    sort(nums1.begin(), nums1.end());
+    sort(nums2.begin(), nums2.end());
     for(int i=0; i<nums1.size(); i++) {
-        for(int j=0; j<nums2.size(); j++) {
-            if(nums1[i] == nums2[j]) {
+        int l = 0;
+        int r = (int) nums2.size();
+        while (l<r) {
+            int m = (l + r) / 2;
+            if(nums1[i] > nums2[m]) {
+                l = m + 1;
+            } else if (nums1[i] < nums2[m]) {
+                r = m;
+            } else {
                 result.push_back(nums1[i]);
-                nums2.erase(nums2.begin() + j);
+                nums2.erase(nums2.begin() + m);
                 break;
             }
         }
@@ -24,8 +33,8 @@ vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
 }
 
 int main(int argc, const char * argv[]) {
-    vector<int> v {4,9,5};
-    vector<int> c {9,4,9,8,4};
+    vector<int> v {1,2,2,1};
+    vector<int> c {2,2};
     vector<int> result = intersect(v, c);
     for(int a: result)
         cout<<a<<" ";
