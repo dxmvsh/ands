@@ -7,34 +7,29 @@
 
 #include <iostream>
 #include "vector"
+#include "unordered_map"
 using namespace std;
 
 vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+    if(nums2.size() < nums1.size())
+        intersect(nums2, nums1);
+    unordered_map<int, int> counter;
     vector<int> result;
-    sort(nums1.begin(), nums1.end());
-    sort(nums2.begin(), nums2.end());
     for(int i=0; i<nums1.size(); i++) {
-        int l = 0;
-        int r = (int) nums2.size();
-        while (l<r) {
-            int m = (l + r) / 2;
-            if(nums1[i] > nums2[m]) {
-                l = m + 1;
-            } else if (nums1[i] < nums2[m]) {
-                r = m;
-            } else {
-                result.push_back(nums1[i]);
-                nums2.erase(nums2.begin() + m);
-                break;
-            }
+        counter[nums1[i]]++;
+    }
+    for(int i=0; i<nums2.size(); i++) {
+        if(counter[nums2[i]]) {
+            counter[nums2[i]]--;
+            result.push_back(nums2[i]);
         }
     }
     return result;
 }
 
 int main(int argc, const char * argv[]) {
-    vector<int> v {1,2,2,1};
-    vector<int> c {2,2};
+    vector<int> v {1,2,12,1};
+    vector<int> c {2,12};
     vector<int> result = intersect(v, c);
     for(int a: result)
         cout<<a<<" ";
