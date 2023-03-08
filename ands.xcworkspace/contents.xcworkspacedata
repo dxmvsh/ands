@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:string_to_int/string_to_int.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:reverse_integer/reverse_integer.xcodeproj">
    </FileRef>
    <FileRef
