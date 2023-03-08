@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:first_unique_char/first_unique_char.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:intersection_of_two_arrays_ii/intersection_of_two_arrays_ii.xcodeproj">
    </FileRef>
    <FileRef
