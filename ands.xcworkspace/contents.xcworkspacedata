@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:container_with_most_water/container_with_most_water.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:fizz_buzz/fizz_buzz.xcodeproj">
    </FileRef>
    <FileRef
