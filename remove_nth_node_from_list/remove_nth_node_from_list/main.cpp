@@ -44,34 +44,49 @@ struct ListNode {
 //    return result;
 //}
 
+//ListNode* removeNthFromEnd(ListNode* head, int n) {
+//    vector<ListNode*> v;
+//    while (head != nullptr) {
+//        v.push_back(head);
+//        head = head ->next;
+//    }
+//    if(v.size() == 1)
+//        return nullptr;
+//    if(v.size() == n)
+//        return v[0]->next;
+//    if(n-1 == 0)
+//        v[v.size() - (n + 1)]->next = nullptr;
+//    else
+//        v[v.size() - (n + 1)]->next = v[v.size() - (n-1)];
+//    return v[0];
+//}
+
 ListNode* removeNthFromEnd(ListNode* head, int n) {
-    vector<ListNode*> v;
-    while (head != nullptr) {
-        v.push_back(head);
-        head = head ->next;
+    ListNode* fast = head;
+    ListNode* slow = head;
+    for(int i=0; i<n; i++)
+        fast = fast -> next;
+    if(!fast)
+        return head->next;
+    while (fast -> next) {
+        fast = fast -> next;
+        slow = slow -> next;
     }
-    if(v.size() == 1)
-        return nullptr;
-    if(v.size() == n)
-        return v[0]->next;
-    if(n-1 == 0)
-        v[v.size() - (n + 1)]->next = nullptr;
-    else
-        v[v.size() - (n + 1)]->next = v[v.size() - (n-1)];
-    return v[0];
+    slow -> next = slow -> next -> next;
+    return head;
 }
 
 int main(int argc, const char * argv[]) {
     ListNode* a = new ListNode(1);
     ListNode* b = new ListNode(2);
-//    ListNode* c = new ListNode(3);
-//    ListNode* d = new ListNode(4);
-//    ListNode* e = new ListNode(5);
+    ListNode* c = new ListNode(3);
+    ListNode* d = new ListNode(4);
+    ListNode* e = new ListNode(5);
     
     a->next = b;
-//    b->next = c;
-//    c->next = d;
-//    d->next = e;
+    b->next = c;
+    c->next = d;
+    d->next = e;
     
     ListNode* result = removeNthFromEnd(a, 1);
     while (result != nullptr) {
