@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:letter_combinations_phone_number/letter_combinations_phone_number.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:3sum/3sum.xcodeproj">
    </FileRef>
    <FileRef
