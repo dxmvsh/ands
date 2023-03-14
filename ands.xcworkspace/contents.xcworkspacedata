@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:group_anagrams/group_anagrams.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:remove_nth_node_from_list/remove_nth_node_from_list.xcodeproj">
    </FileRef>
    <FileRef
