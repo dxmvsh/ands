@@ -30,17 +30,14 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
     vector<vector<string>> result;
     if(!strs.size())
         return result;
-    unordered_map<string, vector<int>> dictionary;
-    vector<string> tmp = strs;
-    for(int i=0; i<tmp.size(); i++) {
-        sort(tmp[i].begin(), tmp[i].end());
-        dictionary[tmp[i]].push_back(i);
+    unordered_map<string, vector<string>> dictionary;
+    for(int i=0; i<strs.size(); i++) {
+        string s = strs[i];
+        sort(strs[i].begin(), strs[i].end());
+        dictionary[strs[i]].push_back(s);
     }
     for(auto element: dictionary) {
-        vector<string> group;
-        for(int index: element.second)
-            group.push_back(strs[index]);
-        result.push_back(group);
+        result.push_back(element.second);
     }
     return result;
 }
