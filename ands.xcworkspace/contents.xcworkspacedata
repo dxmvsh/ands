@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../top_k_frequent_elements/top_k_frequent_elements.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:group_anagrams/group_anagrams.xcodeproj">
    </FileRef>
    <FileRef
