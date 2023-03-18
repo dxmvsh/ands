@@ -40,6 +40,9 @@
    <FileRef
       location = "group:longest_palindromic_substr/longest_palindromic_substr.xcodeproj">
    </FileRef>
+   <FileRef>
+      location = "group:product_of_array_except_self/product_of_array_except_self.xcodeproj">
+   </FileRef>
    <FileRef
       location = "group:longest_substring_wo_rep_chars/longest_substring_wo_rep_chars.xcodeproj">
    </FileRef>
