@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:valid_sudoku/valid_sudoku.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:product_of_array_except_self/product_of_array_except_self.xcodeproj">
    </FileRef>
    <FileRef
