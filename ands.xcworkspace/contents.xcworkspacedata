@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:evaluate_reverse_polish_notation/evaluate_reverse_polish_notation.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:minstack/minstack.xcodeproj">
    </FileRef>
    <FileRef
