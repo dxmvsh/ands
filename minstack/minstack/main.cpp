@@ -7,30 +7,36 @@
 
 #include <iostream>
 #include "vector"
+#include "stack"
 using namespace std;
 
 class MinStack {
 public:
 
-    vector<vector<int>> elements;
+    stack<int> elements;
+    stack<int> minimumElements;
     MinStack() {}
     void push(int val) {
-        vector<int> element(2, val);
-        if(!elements.empty())
-            element[1] = min(val, elements[elements.size() - 1][1]);
-        elements.push_back(element);
+        elements.push(val);
+        int minimumValue;
+        if(minimumElements.empty())
+            minimumValue = val;
+        else
+            minimumValue = min(val, minimumElements.top());
+        minimumElements.push(minimumValue);
     }
     
     void pop() {
-        elements.erase(elements.end() - 1);
+        elements.pop();
+        minimumElements.pop();
     }
     
     int top() {
-        return elements[elements.size() - 1][0];
+        return elements.top();
     }
     
     int getMin() {
-        return elements[elements.size() - 1][1];
+        return minimumElements.top();
     }
     
 };
