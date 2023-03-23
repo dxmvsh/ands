@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:daily_temperatures/daily_temperatures.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:generate_parentheses/generate_parentheses.xcodeproj">
    </FileRef>
    <FileRef
