@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:car_fleet/car_fleet.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:daily_temperatures/daily_temperatures.xcodeproj">
    </FileRef>
    <FileRef
