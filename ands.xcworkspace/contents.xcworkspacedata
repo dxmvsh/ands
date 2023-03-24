@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:search_in_rotated_sorted_array/search_in_rotated_sorted_array.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:car_fleet/car_fleet.xcodeproj">
    </FileRef>
    <FileRef
