@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:permutations/permutations.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:search_range/search_range.xcodeproj">
    </FileRef>
    <FileRef
