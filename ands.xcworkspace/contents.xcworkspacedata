@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:pow_x_n/pow_x_n.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:rotate_image/rotate_image.xcodeproj">
    </FileRef>
    <FileRef
