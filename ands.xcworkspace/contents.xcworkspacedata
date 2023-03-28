@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:count_and_say/count_and_say.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:pow_x_n/pow_x_n.xcodeproj">
    </FileRef>
    <FileRef
